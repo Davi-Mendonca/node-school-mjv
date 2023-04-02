@@ -4,4 +4,4 @@
     pasta: Aula 1
 
 ## Aula 2 e 3:
-    pasta: Aula 2/primeiro-projeto
+    pasta: Aula 2 e 3/primeiro-projeto
