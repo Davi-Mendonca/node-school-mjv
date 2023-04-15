@@ -1,6 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import routes from './routers';
+import connection from './config/database'
 
 const app = express()
 
@@ -12,6 +13,10 @@ app.use(routes);
 
 const port = 3000;
 
-app.listen(port, () => {
-    console.log('Aplicação online\nPorta: ', port);
-});
+connection.then(() => {
+    console.log('Banco de dados Online.');
+    
+    app.listen(port, () => {
+        console.log('Aplicação online\nPorta: ', port);
+    });
+}).catch((err) => console.log(err))
