@@ -1,4 +1,4 @@
-import { studentSchema } from '../models/student.model';
+import { IStudent, studentSchema } from '../models/student.model';
 import { Student } from '../models/student.model'
 
 class StudentRepository {
@@ -10,11 +10,11 @@ class StudentRepository {
         return Student.findOne({ document: document })
     }
 
-    create(student: typeof Student) {
+    create(student: IStudent) {
         return Student.create(student)
     }
 
-    update(document: string, student: Partial<typeof Student>) {
+    update(document: string, student: Partial<IStudent>) {
         return Student.updateOne({ document: document }, { $set: student })
     }
 

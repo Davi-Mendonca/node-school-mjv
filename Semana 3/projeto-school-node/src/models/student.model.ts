@@ -1,7 +1,17 @@
 import { Schema } from "mongoose";
 import mongoose from "mongoose";
 
-export const studentSchema = new Schema({
+export interface IStudent{
+  name: string;
+  email: string;
+  document: string;
+  password: string;
+  age: number;
+  phone: string;
+  createdAt: string | Date;
+}
+
+export const studentSchema = new Schema<IStudent>({
   name: {
     type: String
   },
@@ -27,4 +37,4 @@ export const studentSchema = new Schema({
   }
 });
 
-export const Student = mongoose.model('Student', studentSchema);
+export const Student = mongoose.model<IStudent>('Student', studentSchema);

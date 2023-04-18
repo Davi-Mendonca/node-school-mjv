@@ -9,6 +9,8 @@ app.use(cors());
 app.use(express.json());
 app.use(routes);
 
+require("dotenv").config()
+
 // app.use(healthRouter);
 
 const port = 3000;
@@ -19,4 +21,4 @@ connection.then(() => {
     app.listen(port, () => {
         console.log('Aplicação online\nPorta: ', port);
     });
-}).catch((err) => console.log(err))
+}).catch((err: any) => console.log(err))
